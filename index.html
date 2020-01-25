@@ -1,0 +1,43 @@
+<html>
+  <center><h1>
+  Welcome! Please press the button according to your heartbeat to fi     nd out what your BPM is
+  </h1>
+  
+  <br>
+  <br>
+  <br>
+  
+  <button onclick="updateHeartRate()">
+  One Heartbeat
+  </button>
+  
+  <br>
+  <br>
+  
+  <p id="heartrate"></p>
+  </center>
+  
+  <script>
+  	var totalBeats = 0;
+    var firstClick = true;
+    var difference = 0;
+    var bpm = 0;
+    
+    function updateHeartRate() {
+    
+    	var d = new Date();
+		totalBeats++;
+    
+    	if(firstClick == true) {
+			difference = d.getTime();
+			firstClick = false;
+      }
+   
+   		t = (d.getTime() - difference)/1000
+		bpm = Math.round(totalBeats * (60 / t));
+      
+    	document.getElementById("heartrate").innerHTML = bpm;
+    
+    }
+  </script>
+</html>
