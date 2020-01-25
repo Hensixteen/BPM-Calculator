@@ -1,6 +1,6 @@
 <html>
   <center><h1>
-  Welcome! Please press the button according to your heartbeat to fi     nd out what your BPM is
+  Welcome! Please press the button according to your heartbeat to find out what your BPM is
   </h1>
   
   <br>
@@ -18,25 +18,25 @@
   </center>
   
   <script>
-  	var totalBeats = 0;
+    var totalBeats = 0;
     var firstClick = true;
     var difference = 0;
     var bpm = 0;
     
     function updateHeartRate() {
     
-    	var d = new Date();
-		totalBeats++;
+      var d = new Date();
+      totalBeats++;
     
-    	if(firstClick == true) {
-			difference = d.getTime();
-			firstClick = false;
+      if(firstClick == true) {
+        difference = d.getTime();
+        firstClick = false;
       }
    
-   		t = (d.getTime() - difference)/1000
-		bpm = Math.round(totalBeats * (60 / t));
+      t = (d.getTime() - difference)/1000
+      bpm = Math.round(totalBeats * (60 / t));
       
-    	document.getElementById("heartrate").innerHTML = bpm;
+      document.getElementById("heartrate").innerHTML = bpm;
     
     }
   </script>
